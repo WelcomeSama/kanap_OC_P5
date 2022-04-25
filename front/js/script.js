@@ -1,5 +1,4 @@
 // Récupération des articles de l'API
-
 async function getProducts() {
   const result = await fetch("http://localhost:3000/api/products");
   if (result.status === 200) {
@@ -9,10 +8,7 @@ async function getProducts() {
   }
 }
 
-cards();
-
 // Répartition des données de l'API dans le DOM
-
 async function cards() {
   getProducts()
     .then(function (resultatAPI) {
@@ -54,3 +50,4 @@ async function cards() {
       return error;
     });
 }
+cards();
