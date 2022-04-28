@@ -36,13 +36,13 @@ async function cards() {
         let productName = document.createElement("h3");
         productArticle.appendChild(productName);
         productName.classList.add("productName");
-        productName.innerHTML = product.name;
+        productName.InnerText = product.name;
 
         // Insertion de la description "p"
         let productDescription = document.createElement("p");
         productArticle.appendChild(productDescription);
         productDescription.classList.add("productName");
-        productDescription.innerHTML = product.description;
+        productDescription.InnerText = product.description;
       }
     })
     .catch(function (error) {

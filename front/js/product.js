@@ -33,22 +33,22 @@ async function card() {
 
       // Insertion du titre "h1"
       let title = document.querySelector("#title");
-      title.innerHTML = resultatAPI.name;
+      title.InnerText = resultatAPI.name;
 
       // Insertion du prix
       let price = document.querySelector("#price");
-      price.innerHTML = resultatAPI.price;
+      price.InnerText = resultatAPI.price;
 
       // Insertion de la description "p"
       let description = document.querySelector("#description");
-      description.innerHTML = resultatAPI.description;
+      description.InnerText = resultatAPI.description;
 
       // Insertion du choix de couleurs
       for (let colors of resultatAPI.colors) {
         let selectColor = document.createElement("option");
         document.querySelector("#colors").appendChild(selectColor);
         selectColor.value = colors;
-        selectColor.innerHTML = colors;
+        selectColor.InnerText = colors;
       }
     })
     .catch(function (error) {

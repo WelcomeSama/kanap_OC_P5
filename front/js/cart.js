@@ -8,7 +8,7 @@ const panierPosition = document.querySelector("#cart__items");
 async function panier() {
   //si le panier est vide : afficher "le panier est vide"
   if (productPanier === null) {
-    panierPosition.innerHTML = `Votre panier est vide!`;
+    panierPosition.InnerText = `Votre panier est vide!`;
   } else {
     //si il y'a des articles dans le panier
     let panier = [];
@@ -50,10 +50,10 @@ async function panier() {
     }
 
     //afficher le prix total
-    document.getElementById("totalPrice").innerHTML = total;
+    document.getElementById("totalPrice").InnerText = total;
 
     if (i == productPanier.length) {
-      panierPosition.innerHTML = panier;
+      panierPosition.InnerText = panier;
     }
   }
   totalQty();
@@ -78,7 +78,7 @@ function totalQty() {
   }
 
   let productTotalQuantity = document.getElementById("totalQuantity");
-  productTotalQuantity.innerHTML = totalQuantity;
+  productTotalQuantity.InnerText = totalQuantity;
 }
 
 // Suppression d'un produit
@@ -114,12 +114,12 @@ function modifQty() {
       let listProduct = JSON.parse(localStorage.getItem("produit"));
       let total = parseInt("0");
       total = parseInt(
-        document.getElementById("totalPrice").innerHTML -
+        document.getElementById("totalPrice").InnerText -
           listProduct[index][6] * "prix"
       );
       listProduct[index][6] = currentValue.value;
       total += parseInt(listProduct[index][6] * "prix");
-      document.getElementById("totalPrice").innerHTML = total;
+      document.getElementById("totalPrice").InnerText = total;
       localStorage.setItem("produit", JSON.stringify(listProduct));
       alert("Votre quantité a bien été mofifiée");
       location.reload();
